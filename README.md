@@ -15,7 +15,7 @@ Each folder is one challenge: a full walkthrough, an analyst-notes file with fin
 |---|---|---|---|
 | [pantalones-ctf](./pantalones-ctf/README.md) | OSINT / Web / Threat Intel | Medium | ✅ Completed |
 
-
+---
 
 🧰 About me
 
