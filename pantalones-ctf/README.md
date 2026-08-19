@@ -48,10 +48,11 @@ not only business data but also a hidden operational script.
 Inside the AetherFlow leak, I found:
 
 ```text
-api_keys_internal.yaml
-route_algorithms_PROPRIETARY.sql
-customers.sql
-.exfil.sh
+aetherflow/
+├── api_keys_internal.yaml
+├── route_algorithms_PROPRIETARY.sql
+├── customers.sql
+└── .exfil.sh
 
 ```
 
