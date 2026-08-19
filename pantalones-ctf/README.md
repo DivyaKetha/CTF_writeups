@@ -131,7 +131,135 @@ operations.
 
 ---
 
+# 🧩 5. API Discovery
 
+After discovering the exposed API, I first checked what functionality was available.
+
+The API returned a list of supported actions:
+
+{
+  "error": "missing required parameter: action",
+  "valid_actions": [
+    "upload",
+    "status",
+    "messages",
+    "decrypt",
+    "wallets",
+    "payloads",
+    "exfil"
+  ]
+}
+
+At this point, I tried the available actions to understand how the API worked.
+
+Most of them did not provide anything useful for the flag, but the messages action stood out.
+
+I tested:
+
+api.php?action=messages
+
+The API responded with:
+
+missing required parameter: conversation_id
+
+This revealed that the messages endpoint required another parameter.
+
+---
+
+# 🔎 6. Enumerating Conversation IDs
+
+I initially tested a conversation ID using the parameter shown in the error:
+
+api.php?action=messages&conversation_id=##
+
+The response indicated that the conversation could not be found.
+
+More importantly, the API provided a useful hint:
+
+{
+  "error": "conversation not found",
+  "hint": "valid id provided (ex. conversation_id=0)"
+}
+
+That gave me a valid starting point.
+
+I then checked the conversation IDs sequentially:
+
+conversation_id=0
+conversation_id=1
+conversation_id=2
+conversation_id=3
+conversation_id=4
+
+Some conversations contained useful information, while others were not relevant to the flag.
+
+This was a simple example of parameter enumeration based on application error messages.
+
+📸 Screenshot
+
+Add your screenshot showing the error containing:
+
+valid id provided (ex. conversation_id=0)
+
+Caption:
+
+The API error revealed a valid conversation ID to begin enumeration.
+
+---
+
+# 💬 7. Finding the Useful Internal Conversations
+
+The conversation data became much more interesting once I started checking the valid IDs.
+
+The messages revealed information about the attackers' activities, infrastructure and mistakes.
+
+One particularly important conversation discussed the AetherFlow operation and the accidentally exposed .exfil.sh file.
+
+The attackers explicitly realized that the script exposed information about their infrastructure.
+
+This connected the earlier file discovery with the internal attacker communications.
+
+📸 Screenshot
+
+Add a screenshot of the relevant conversation here.
+
+Caption:
+
+Internal attacker communications revealed the significance of the exposed .exfil.sh file.
+
+---
+
+# 🧠 8. Attacker OPSEC Failure
+
+The internal communications confirmed that the attackers knew about their mistake.
+
+They discussed the fact that .exfil.sh had accidentally been included in the AetherFlow archive.
+
+The script contained information about:
+
+The attacker panel
+The API endpoint
+The authentication mechanism
+
+One attacker assumed that the file would probably remain unnoticed because it was a dotfile.
+
+That turned out to be a bad assumption.
+
+Lesson
+
+Hidden does not mean secure.
+
+A file beginning with . may not appear in a normal directory listing, but it is still part of the archive and can be discovered during investigation.
+
+📸 Screenshot
+
+Add the relevant conversation screenshot here.
+
+Caption:
+
+Attackers discussing their own OPSEC mistake.
+
+---
 
 # 💬 9. Internal Attacker Messages
 
