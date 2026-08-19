@@ -55,19 +55,21 @@ aetherflow/
 
 ```
 
-# 🕵️ 3. Discovering .exfil.sh
+![](Screenshots/2.png)
+
+# 🕵️ 3. Analysis .exfil.sh
 
 The script revealed information about how the attackers were transferring
 stolen files to their infrastructure.
 
 It contained:
 
-A panel address
-An API endpoint
-An authentication header
-An upload action
-A list of files being exfiltrated
-Base64 encoding of file contents
+- A panel address
+- An API endpoint
+- An authentication header
+- An upload action
+- A list of files being exfiltrated
+- Base64 encoding of file contents
 
 A sanitized representation of the relevant logic looked like:
 
@@ -101,7 +103,31 @@ done
 
 ---
 
-# 🧠 4. Attacker OPSEC Failure
+# 🌐 4. API Investigation
+
+After identifying the API endpoint from the leaked script, I investigated
+the available functionality.
+
+The API revealed several actions:
+
+- upload
+- status
+- messages
+- decrypt
+- wallets
+- payloads
+- exfil
+
+The API became an important source of threat intelligence.
+
+I focused on information-gathering functionality rather than destructive
+operations.
+
+![](Screenshots/3.png)
+
+---
+
+# 🧠 5. Attacker OPSEC Failure
 
 The internal communications confirmed that the attackers knew about the
 mistake.
@@ -127,28 +153,6 @@ forensic investigation.
 
 ---
 
-# 🌐 5. API Investigation
-
-After identifying the API endpoint from the leaked script, I investigated
-the available functionality.
-
-The API revealed several actions:
-
-upload
-status
-messages
-decrypt
-wallets
-payloads
-exfil
-
-The API became an important source of threat intelligence.
-
-I focused on information-gathering functionality rather than destructive
-operations.
-
----
-
 # 📊 6. API Status Information
 
 The API status response revealed information about the attackers'
@@ -156,12 +160,12 @@ infrastructure.
 
 It exposed details such as:
 
-Panel version
-Uptime
-Number of nodes
-Active campaigns
-Storage usage
-Operators currently online
+- Panel version
+- Uptime
+- Number of nodes
+- Active campaigns
+- Storage usage
+- Operators currently online
 
 This demonstrated how much information can be exposed by an improperly
 secured management API.
@@ -174,16 +178,18 @@ The messages functionality was particularly valuable.
 
 The exposed conversations contained information about:
 
-Victims
-Attack timelines
-Exfiltration operations
-Internal roles
-Ransom demands
-Infrastructure mistakes
-Credential handling
-Attacker concerns about OPSEC
+- Victims
+- Attack timelines
+- Exfiltration operations
+- Internal roles
+- Ransom demands
+- Infrastructure mistakes
+- Credential handling
+- Attacker concerns about OPSEC
 
 The messages effectively provided an insider view of the operation.
+
+![](Screenshots/
 
 ---
 
