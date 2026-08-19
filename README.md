@@ -17,6 +17,6 @@ Each folder is one challenge: a full walkthrough, an analyst-notes file with fin
 
 ---
 
-🧰 About me
+## 🧰 About me
 
 Transitioning from operations into cybersecurity, working toward SOC Analyst roles. These writeups double as practice for the kind of evidence correlation and incident documentation that job actually involves.
