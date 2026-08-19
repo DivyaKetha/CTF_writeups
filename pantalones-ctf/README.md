@@ -39,7 +39,7 @@ not only business data but also a hidden operational script.
 
 ### Evidence
 
-![Leak site]([https://github.com/DivyaKetha/CTF_writeups/blob/df9c3dea60c148f57258bf1dd99ef10a5c32f900/pantalones-ctf/Screenshots/Leaked-Site.png])
+![Leak site] (.1.png)
 
 ---
 
