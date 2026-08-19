@@ -172,7 +172,7 @@ secured management API.
 
 ---
 
-# 💬 7. Internal Attacker Messages
+# 💬 9. Internal Attacker Messages
 
 The messages functionality was particularly valuable.
 
@@ -231,6 +231,27 @@ attacker infrastructure.
 
 ---
 
+# 💬 9. Internal Attacker Messages
+
+The messages functionality was particularly valuable.
+
+The exposed conversations contained information about:
+
+- Victims
+- Attack timelines
+- Exfiltration operations
+- Internal roles
+- Ransom demands
+- Infrastructure mistakes
+- Credential handling
+- Attacker concerns about OPSEC
+
+The messages effectively provided an insider view of the operation.
+
+![](Screenshots/
+
+---
+
 # 🔐 10. Credential Discovery
 
 While investigating the internal messages, I found another interesting
@@ -249,6 +270,8 @@ The value looked like:
 The attacker described it as "encoded."
 
 This immediately suggested Base64.
+
+![](Screenshots/4.png)
 
 ---
 
@@ -275,6 +298,8 @@ Original plaintext
 
 This recovered the password associated with the attacker account.
 
+![](Screenshots/13.png)
+
 ---
 
 # 🚪 12. Discovering the Admin Panel
@@ -298,6 +323,8 @@ authentication against the challenge's admin panel.
 
 The credentials were accepted.
 
+![](Screenshots/14.png)
+
 ---
 
 # 🖥️ 13. Admin Panel Access
@@ -319,9 +346,11 @@ Weak encoding
      +
 Exposed infrastructure
 
+![](Screenshots/15.png)
+
 ---
 
-🏁 14. Finding the Flag
+# 🏁 14. Finding the Flag
 
 The final flag was located inside the administrative panel.
 
@@ -330,3 +359,4 @@ The final flag was located inside the administrative panel.
 ```
 flare{pantal0n3s_g0t_pantsed_2026}
 ```
+![](Screenshots/8.png)
