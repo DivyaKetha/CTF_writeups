@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/aa4dadc8-0ba6-4dbb-bd36-dd69f5c65ac2" />
+<img width="1983" height="793" alt="image" src="https://github.com/user-attachments/assets/fdc90145-50c9-43f8-a0e8-a9835d58d2e2" />
 
 
 # 🚩 CTF Writeups
