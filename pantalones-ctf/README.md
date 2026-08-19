@@ -39,7 +39,7 @@ not only business data but also a hidden operational script.
 
 ### Evidence
 
-[Leak site](./Screenshots/1.png)
+!./Screenshots/1.png)
 
 ---
 
