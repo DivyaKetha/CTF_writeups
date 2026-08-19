@@ -38,7 +38,7 @@ AetherFlow was especially interesting because its leaked archive contained
 not only business data but also a hidden operational script.
 
 ### Evidence
-![a](Screenshots/1.png)
+![](Screenshots/1.png)
 
 ---
 
