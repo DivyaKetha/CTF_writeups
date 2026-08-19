@@ -40,6 +40,10 @@ not only business data but also a hidden operational script.
 ### Evidence
 ![](Screenshots/1.png)
 
+![](Screenshots/1.1.png)
+
+![](Screenshots/1.2.png)
+
 ---
 
 # 🕵️ 2. Discovering the Hidden `.exfil.sh`
