@@ -7,6 +7,16 @@ Writeups from CTF challenges I've worked through while transitioning into a SOC 
 
 Each folder is one challenge: a full walkthrough, an analyst-notes file with findings and lessons learned, and screenshots as evidence.
 
+---
+
 ## 📜 Writeups
-Challenge	Category	Difficulty	Status
-pantalones-ctf	OSINT / Web / Threat Intel	Medium	✅ Completed
+
+| Challenge | Category | Difficulty | Status |
+|---|---|---|---|
+| [pantalones-ctf](./pantalones-ctf/README.md) | OSINT / Web / Threat Intel | Medium | ✅ Completed |
+
+
+
+🧰 About me
+
+Transitioning from operations into cybersecurity, working toward SOC Analyst roles. These writeups double as practice for the kind of evidence correlation and incident documentation that job actually involves.
