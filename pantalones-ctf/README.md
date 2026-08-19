@@ -55,7 +55,7 @@ customers.sql
 
 ```
 
-🕵️ 3. Discovering .exfil.sh
+# 🕵️ 3. Discovering .exfil.sh
 
 The script revealed information about how the attackers were transferring
 stolen files to their infrastructure.
@@ -94,7 +94,9 @@ done
 
 ```
 
-🧠 4. Attacker OPSEC Failure
+---
+
+# 🧠 4. Attacker OPSEC Failure
 
 The internal communications confirmed that the attackers knew about the
 mistake.
@@ -118,7 +120,9 @@ Files beginning with . may not appear in a normal directory listing, but
 they are still part of the filesystem and should be examined during a
 forensic investigation.
 
-🌐 5. API Investigation
+---
+
+# 🌐 5. API Investigation
 
 After identifying the API endpoint from the leaked script, I investigated
 the available functionality.
@@ -140,7 +144,7 @@ operations.
 
 ---
 
-📊 6. API Status Information
+# 📊 6. API Status Information
 
 The API status response revealed information about the attackers'
 infrastructure.
@@ -159,7 +163,7 @@ secured management API.
 
 ---
 
-💬 7. Internal Attacker Messages
+# 💬 7. Internal Attacker Messages
 
 The messages functionality was particularly valuable.
 
@@ -178,7 +182,7 @@ The messages effectively provided an insider view of the operation.
 
 ---
 
-🔥 8. AetherFlow Investigation
+# 🔥 8. AetherFlow Investigation
 
 One conversation discussed the completed AetherFlow operation.
 
@@ -195,7 +199,7 @@ exfiltration operation.
 
 ---
 
-🧩 9. The .exfil.sh Mistake
+# 🧩 9. The .exfil.sh Mistake
 
 Another conversation provided one of the most important clues.
 
@@ -216,7 +220,7 @@ attacker infrastructure.
 
 ---
 
-🔐 10. Credential Discovery
+# 🔐 10. Credential Discovery
 
 While investigating the internal messages, I found another interesting
 conversation.
@@ -237,7 +241,7 @@ This immediately suggested Base64.
 
 ---
 
-🧪 11. Base64 Decoding
+# 🧪 11. Base64 Decoding
 
 I decoded the value using CyberChef.
 
@@ -262,7 +266,7 @@ This recovered the password associated with the attacker account.
 
 ---
 
-🚪 12. Discovering the Admin Panel
+# 🚪 12. Discovering the Admin Panel
 
 The Pantalones site contained an administrative interface:
 
@@ -285,7 +289,7 @@ The credentials were accepted.
 
 ---
 
-🖥️ 13. Admin Panel Access
+# 🖥️ 13. Admin Panel Access
 
 After successful authentication, I reached the administrative interface.
 
