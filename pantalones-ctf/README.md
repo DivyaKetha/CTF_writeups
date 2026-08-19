@@ -135,34 +135,23 @@ operations.
 
 After discovering the exposed API, I first checked what functionality was available.
 
-The API returned a list of supported actions:
-
-{
-  "error": "missing required parameter: action",
-  "valid_actions": [
-    "upload",
-    "status",
-    "messages",
-    "decrypt",
-    "wallets",
-    "payloads",
-    "exfil"
-  ]
-}
-
 At this point, I tried the available actions to understand how the API worked.
 
 Most of them did not provide anything useful for the flag, but the messages action stood out.
 
 I tested:
 
+```
 api.php?action=messages
 
+```
 The API responded with:
 
-missing required parameter: conversation_id
+- missing required parameter: conversation_id
 
 This revealed that the messages endpoint required another parameter.
+
+![](Screenshots/4.png)
 
 ---
 
@@ -173,6 +162,8 @@ I initially tested a conversation ID using the parameter shown in the error:
 api.php?action=messages&conversation_id=##
 
 The response indicated that the conversation could not be found.
+
+![](Screenshots/5.png)
 
 More importantly, the API provided a useful hint:
 
@@ -195,13 +186,7 @@ Some conversations contained useful information, while others were not relevant 
 
 This was a simple example of parameter enumeration based on application error messages.
 
-📸 Screenshot
-
-Add your screenshot showing the error containing:
-
 valid id provided (ex. conversation_id=0)
-
-Caption:
 
 The API error revealed a valid conversation ID to begin enumeration.
 
@@ -219,11 +204,7 @@ The attackers explicitly realized that the script exposed information about thei
 
 This connected the earlier file discovery with the internal attacker communications.
 
-📸 Screenshot
-
-Add a screenshot of the relevant conversation here.
-
-Caption:
+![](Screenshots/6.png)
 
 Internal attacker communications revealed the significance of the exposed .exfil.sh file.
 
@@ -258,27 +239,6 @@ Add the relevant conversation screenshot here.
 Caption:
 
 Attackers discussing their own OPSEC mistake.
-
----
-
-# 💬 9. Internal Attacker Messages
-
-The messages functionality was particularly valuable.
-
-The exposed conversations contained information about:
-
-- Victims
-- Attack timelines
-- Exfiltration operations
-- Internal roles
-- Ransom demands
-- Infrastructure mistakes
-- Credential handling
-- Attacker concerns about OPSEC
-
-The messages effectively provided an insider view of the operation.
-
-![](Screenshots/
 
 ---
 
