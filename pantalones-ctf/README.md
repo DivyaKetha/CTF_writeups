@@ -143,7 +143,6 @@ I tested:
 
 ```
 api.php?action=messages
-
 ```
 The API responded with:
 
@@ -159,28 +158,30 @@ This revealed that the messages endpoint required another parameter.
 
 I initially tested a conversation ID using the parameter shown in the error:
 
+```
 api.php?action=messages&conversation_id=##
-
+```
 The response indicated that the conversation could not be found.
 
 ![](Screenshots/5.png)
 
 More importantly, the API provided a useful hint:
 
+```
 {
   "error": "conversation not found",
   "hint": "valid id provided (ex. conversation_id=0)"
 }
-
+```
 That gave me a valid starting point.
 
 I then checked the conversation IDs sequentially:
 
-conversation_id=0
-conversation_id=1
-conversation_id=2
-conversation_id=3
-conversation_id=4
+- conversation_id=0
+- conversation_id=1
+- conversation_id=2
+- conversation_id=3
+- conversation_id=4
 
 Some conversations contained useful information, while others were not relevant to the flag.
 
@@ -218,9 +219,9 @@ They discussed the fact that .exfil.sh had accidentally been included in the Aet
 
 The script contained information about:
 
-The attacker panel
-The API endpoint
-The authentication mechanism
+- The attacker panel
+- The API endpoint
+- The authentication mechanism
 
 One attacker assumed that the file would probably remain unnoticed because it was a dotfile.
 
@@ -228,7 +229,7 @@ That turned out to be a bad assumption.
 
 Lesson
 
-Hidden does not mean secure.
+### Hidden does not mean secure.
 
 A file beginning with . may not appear in a normal directory listing, but it is still part of the archive and can be discovered during investigation.
 
@@ -257,7 +258,7 @@ The attacker described it as "encoded."
 
 This immediately suggested Base64.
 
-![](Screenshots/4.png)
+![](Screenshots/7.png)
 
 ---
 
