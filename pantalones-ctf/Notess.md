@@ -142,34 +142,37 @@ I would also ask:
 
 For example:
 
-Files
-*.log
-*.bak
-*.old
-.*
-.env
-config files
-scripts
-temporary files
-Credentials
-Passwords
-API keys
-Tokens
-SSH keys
-Cloud credentials
-Database credentials
-Infrastructure
-IP addresses
-Domains
-API endpoints
-Command-and-control infrastructure
-Management panels
-Communications
-Internal chat
-Emails
-Ticket systems
-Notes
-Comments
+- **Files**
+  - `*.log`
+  - `*.bak`
+  - `*.old`
+  - `.*`
+  - `.env`
+  - Configuration files
+  - Scripts
+  - Temporary files
+
+- **Credentials & Secrets**
+  - Passwords
+  - API keys
+  - Tokens
+  - SSH keys
+  - Cloud credentials
+  - Database credentials
+
+- **Infrastructure**
+  - IP addresses
+  - Domains
+  - API endpoints
+  - Command-and-control infrastructure
+  - Management panels
+
+- **Communications**
+  - Internal chat
+  - Emails
+  - Ticket systems
+  - Notes
+  - Comments
 
 These artifacts can provide valuable context during an investigation.
 
