@@ -10,7 +10,7 @@ discover the hidden flag.
 
 ---
 
-## Tools
+## 🪛 Tools
 
 - Cyberchef
 
