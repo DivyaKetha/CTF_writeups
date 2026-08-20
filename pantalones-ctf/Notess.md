@@ -42,7 +42,7 @@ The entire investigation can be summarized as:
 The attackers published an operational script containing information about
 their infrastructure.
 
-Security impact
+Security impact:
 
 An attacker or researcher could potentially use this information to locate
 and interact with the management API.
@@ -51,7 +51,7 @@ and interact with the management API.
 
 The leaked script contained an authentication mechanism for the API.
 
-Security impact
+Security impact:
 
 Exposure of authentication material could allow unauthorized access to
 attacker infrastructure.
@@ -60,7 +60,7 @@ attacker infrastructure.
 
 The attackers shared a password through their internal messaging system.
 
-Security impact
+Security impact:
 
 Anyone gaining access to the conversation could potentially obtain the
 credential.
@@ -70,61 +70,43 @@ credential.
 
 The password was Base64 encoded rather than securely protected.
 
-Security impact
+Security impact:
 
 Base64 provides no meaningful confidentiality.
 
-## Finding 5 — Administrative access was protected by weak credential
-
-practices
+## Finding 5 — Administrative access was protected by weak credential practices
 
 The discovered credential could be used to authenticate to the CTF's
 administrative interface.
 
-## Security impact
+Security impact:
 
 Credential reuse and poor secret management can turn a single information
 leak into administrative compromise.
 
 # 🛡️ SOC Analyst Perspective
 
-The biggest lesson I took from this CTF was the importance of evidence
-correlation.
+- The biggest lesson I took from this CTF was the importance of evidence correlation.
 
-Initially, the individual pieces of information didn't appear to be
-related:
+- Initially, the individual pieces of information didn't appear to be related
 
-A leaked ZIP
-       ↓
-A hidden script
-       ↓
-An API endpoint
-       ↓
-Internal messages
-       ↓
-An encoded string
-       ↓
-A password
-       ↓
-An admin login
+- But when the evidence was correlated, it formed a complete attack chain.
 
-But when the evidence was correlated, it formed a complete attack chain.
+- This is similar to real SOC investigations.
 
-This is similar to real SOC investigations.
-
-A single alert may not tell the entire story.
+- A single alert may not tell the entire story.
 
 An analyst may need to correlate:
 
-File activity
-Authentication events
-Network connections
-Process execution
-Credentials
-Emails
-Logs
-Threat intelligence
-User activity
+- File activity
+- Authentication events
+- Network connections
+- Process execution
+- Credentials
+- Emails
+- Logs
+- Threat intelligence
+- User activity
 
 
 # 🔍 What I Would Look For During a Real Incident
@@ -211,17 +193,16 @@ The flag wasn't obvious from the beginning.
 It required connecting multiple pieces of evidence.
 
 # 🛠️ Tools Used
-CyberChef
-Web browser
-Source-code inspection
-HTTP/API analysis
-Manual investigation
-Base64 decoding
+- CyberChef
+- Web browser
+- Source-code inspection
+- HTTP/API analysis
+- Manual investigation
+- Base64 decoding
 
 
 # 🏆 Challenge Status
-Pantalones CTF
-Status: COMPLETED ✅
+Pantalones CTF Status: COMPLETED ✅
 Flag: 
 ```
 flare{pantal0n3s_g0t_pantsed_2026}
