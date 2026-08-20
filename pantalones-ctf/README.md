@@ -10,6 +10,12 @@ discover the hidden flag.
 
 ---
 
+## Tools
+
+- Cyberchef
+
+---
+
 ## 🧰 Skills & Techniques
 
 - OSINT
