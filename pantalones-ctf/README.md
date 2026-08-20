@@ -13,6 +13,9 @@ discover the hidden flag.
 ## 🛠️ Tools
 
 - Cyberchef
+- Web browser
+- Source-code inspection
+- HTTP/API analysis
 
 ---
 
