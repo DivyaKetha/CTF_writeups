@@ -232,11 +232,7 @@ Hidden does not mean secure.
 
 A file beginning with . may not appear in a normal directory listing, but it is still part of the archive and can be discovered during investigation.
 
-📸 Screenshot
-
-Add the relevant conversation screenshot here.
-
-Caption:
+![](Screenshots/9.png)
 
 Attackers discussing their own OPSEC mistake.
 
